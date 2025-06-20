@@ -10,7 +10,7 @@ def parse_habr_news(keywords):
     articles = []
     for article in soup.find_all("article"):
         title = article.find("h2").text.strip()
-        link = article.find("a")["href"]
+        link = article.find_all('a')[2]["href"]
 
         if any(word.lower() in title.lower() for word in keywords):
             articles.append({"title": title, "link": link})
@@ -22,4 +22,5 @@ if __name__ == "__main__":
     keywords = ["Python", "ИИ", "GPT"]
     news = parse_habr_news(keywords)
     for item in news:
-        print(f"{item['title']}\n{item['link']}\n")
+        print(f"{item['title']} \n https://habr.com{item['link']}\n")
+
