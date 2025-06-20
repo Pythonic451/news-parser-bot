@@ -1,12 +1,9 @@
-from telegram import Bot
-from telegram.error import TelegramError
+import telebot
 
 def send_to_telegram(token, chat_id, message):
-    bot = Bot(token=token)
-    try:
-        bot.send_message(chat_id=chat_id, text=message)
-    except TelegramError as e:
-        print(f"Ошибка отправки: {e}")
+    bot = telebot.TeleBot(token=token)
+
+    bot.send_message(chat_id=chat_id, text=message)
 
 if __name__ == "__main__":
     # Получите токен у @BotFather и ID чата
