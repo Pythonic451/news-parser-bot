@@ -6,6 +6,6 @@
 
 1. Клонировать репозиторий:
 ```bash
-git clone https://github.com/Pythonic451/news-parser-bot/blob/main/main.py
+git clone https://github.com/Pythonic451/news-parser-bot
 cd news-parser-bot
 ```
